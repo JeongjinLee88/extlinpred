@@ -7,10 +7,10 @@
 ### Abstract
 This manuscript analyzes daily levels of $\text{NO}_2$ measured in parts per billion (ppb) by the US Environmental Protection Agency (EPA).
 The air pollution dataset contains geographical information for gauging stations in Washington DC.
-Additionally, we analyze the daily value-averaged returns of 30 US industry portfolios from 1950 to 2020.
+Additionally, we analyze the daily UK precipitation of 30 stations from 1960 to 2024.
 
 ### Availability
-To access the air pollution data, users can visit the EPA website and download the daily data at (https://www.epa.gov/outdoor-air-quality-data/download-daily-data). Similarly, the industry portfolio data are publicly available at the Kenneth French Data Library (https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data\_library.html).
+To access the air pollution data, users can visit the EPA website and download the daily data at (https://www.epa.gov/outdoor-air-quality-data/download-daily-data). Similarly, the UK precipitation data are publicly available at Met Office (https://catalogue.ceda.ac.uk/uuid/8ddfd4dd5af443f9ad382cd77366d877).
 
 ### Description
 The preprocessing of both datasets is described in Section 6 of the manuscript, and the preprocessed data can be found in the 'Data' folder. The simulated data are also available in the 'Output' folder or can be generated using the script file "1_ScriptLinearPred" and its corresponding source code files. The EPA and the Kenneth French Data Library websites provide data dictionaries for both datasets.
