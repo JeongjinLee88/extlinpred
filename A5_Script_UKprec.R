@@ -110,7 +110,7 @@ image.plot(ai,cex.main=1.5, cex.lab=1.5, cex.axis=1.5, cex=1.5,axis.args = list(
 points(stations[loi, "lon"]+0.01, stations[loi, "lat"],pch=8, cex=1,lwd=1)
 dev.off()
 
-##  Explore optimal weights b*
+##  Figure 4 (right): Explore optimal weights b*
 idx <- 1:numStations
 idx <- c(idx[-loi], idx[loi])
 TPDM_reord <- TPDM[idx, idx]
