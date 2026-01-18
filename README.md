@@ -7,13 +7,13 @@
 ### Abstract
 This manuscript analyzes daily levels of $\text{NO}_2$ measured in parts per billion (ppb) by the US Environmental Protection Agency (EPA).
 The air pollution dataset contains geographical information for gauging stations in Washington DC.
-Additionally, we analyze the daily UK precipitation of 30 stations from 1960 to 2024.
+Additionally, we analyze the daily UK precipitation of 30 stations from 1960 to 2024 across the Cumbria and Lancashire regions.
 
 ### Availability
 To access the air pollution data, users can visit the EPA website and download the daily data at (https://www.epa.gov/outdoor-air-quality-data/download-daily-data). Similarly, the UK precipitation data are publicly available at Met Office (https://catalogue.ceda.ac.uk/uuid/8ddfd4dd5af443f9ad382cd77366d877).
 
 ### Description
-The preprocessing of both datasets is described in Section 6 of the manuscript, and the preprocessed data can be found in the 'Data' folder. The simulated data are also available in the 'Output' folder or can be generated using the script file "1_ScriptLinearPred" and its corresponding source code files. The EPA and the Kenneth French Data Library websites provide data dictionaries for both datasets.
+The preprocessing of both datasets is described in Section 6 of the manuscript, and the preprocessed data can be found in the 'Data' folder. The EPA and the Met Office websites provide data dictionaries for both datasets.
 
 ## Code
 
@@ -21,11 +21,13 @@ The preprocessing of both datasets is described in Section 6 of the manuscript, 
 The provided files offer guidance on how to apply transformed-linear prediction in both simulation studies and applications. By following the script files, users can generate optimized transformed-linear predictions, uncertainty quantification, and assess the coverage rate, etc.
 
 ### Description
-The provided files contain comprehensive instructions and functions for applying transformed-linear prediction in simulation studies and applications, along with reproducing results in Sections 4, 5, and 6 of the manuscript:
+The provided files contain comprehensive instructions and functions for applying transformed-linear prediction in simulation studies and applications, along with reproducing results in Sections 5 and 6 of the manuscript:
 
 ### 1. Script and its source files for simulation studies.
 
-* Script_extlinear.R: A script file that outlines the steps to reproduce results in the manuscript.
+* A_Script_simulation.R: A script file that outlines the steps to reproduce results in the simulation study.
+* functions.R: all source codes together.
+
 * TransformedOperations.R: Functions that define transformed linear operations.
 * PredictionError.R: A function that calculates the tail ratio of prediction error. 
 * genDataParams.R: A function that simulates a regularly varying random vector X constructed from a matrix multiplication of A and returns a data matrix 'X_t' and relevant true quantities. 
@@ -46,7 +48,7 @@ The provided files contain comprehensive instructions and functions for applying
 * A2_Mov_Avg.R: A function that calculates the moving average and moving standard deviation of a time series.
 * A3_ScriptNO2Mixture.R: A script that reproduces the results of the air pollution application.
 * A3_ScriptNO2MixtureMissing.R: A script that reproduces the results of the air pollution application when values at four stations are observed, but none are taken at Alexandria.
-* A4_ScriptPortfolios.R: A script that reproduces the results of the industry portfolios application.
+* A4_Script_UKprec.R: A script that reproduces the results of the UK precipitation application.
 
 ## Output files
 
@@ -64,15 +66,12 @@ The provided files contain comprehensive instructions and functions for applying
 * recentData.Rdata: contains a NO2 dataset for 2016-2020 when four stations are observed and no observation is taken at Alexandria.
 * NewDat.Rdata: contains a dataset from 'NewData.Rdata' with Pareto margins added.
 
-####  Industry portfolios
+####  UK precipitation
 
-* negPf_train.Rdata: contains a training set with Pareto margins added.
-* negPf_test.Rdata: contains a test set with Pareto margins added.
-* N_train.Rdata: contains a training set with Gaussian margins added.
-* N_test.Rdata: contains a test set with Gaussian margins added.
-* CP_coal.Rdata, CP_paper.Rdata, CP_beer.Rdata: contains saved angles and angular masses obtained from the decomposition of the prediction TPDM estimate in a training set for each sector.
+* cumbriaLanc.RData: contains cleaned daily precipitation data across the Cumbria and Lancahsire regions.
+* CP_prcp_final.Rdata: contains saved angles and angular masses obtained from the decomposition of the prediction TPDM estimate in a training set.
 
-CPfactor.R implements completely positive decomposition to obtain multiple $2 \times q$ nonnegative matrices $C^{(0)}$. The computational time depends on the dimension of q* and the number of iterations in a for loop. By default, we choose q* to be 10 and set the number of iterations to 5000 until the algorithm converges. This function takes approximately 2-3 minutes to obtain about 500 angles and angular masses. If users want to skip this function, you can directly use the corresponding Rdata files to reproduce the results.
+CPfactor.R implements completely positive decomposition to obtain multiple $2 \times q$ nonnegative matrices $C$. The computational time depends on the dimension of q* and the number of iterations in a for loop. By default, we choose q* to be 10 and set the number of iterations to 5000 until the algorithm converges. This function takes approximately 2-3 minutes to obtain about 500 angles and angular masses. If users want to skip this function, you can directly use the corresponding Rdata files to reproduce the results.
 
 
 
