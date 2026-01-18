@@ -71,7 +71,7 @@ The provided files contain comprehensive instructions and functions for applying
 * cumbriaLanc.RData: contains cleaned daily precipitation data across the Cumbria and Lancahsire regions.
 * CP_prcp_final.Rdata: contains saved angles and angular masses obtained from the decomposition of the prediction TPDM estimate in a training set.
 
-CPfactor.R implements completely positive decomposition to obtain multiple $2 \times q$ nonnegative matrices $C$. The computational time depends on the dimension of q* and the number of iterations in a for loop. By default, we choose q* to be 10 and set the number of iterations to 5000 until the algorithm converges. This function takes approximately 2-3 minutes to obtain about 500 angles and angular masses. If users want to skip this function, you can directly use the corresponding Rdata files to reproduce the results.
+CPfactor.R implements completely positive decomposition to obtain multiple $2 \times q$ nonnegative matrices $C$. The computational time depends on the dimension of q* and the number of iterations in a for loop. By default, we choose q* to be 10 and set the number of iterations to 5000 until the algorithm converges. This function takes approximately 2-3 minutes to obtain about 500 angles and angular masses. If users want to skip this function, you can directly use the corresponding Rdata files in the **output** folder to reproduce the results.
 
 
 
